@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "@repo/feature-xy",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && tsc-alias",
+    "build:prod": "tsc && tsc-alias",
+    "build:watch": "tsc && (concurrently \"tsc -w --preserveWatchOutput\" \"tsc-alias -w\")",
+    "dev": "pnpm build:watch",
+    "lint": "eslint",
+    "format": "prettier . --check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "concurrently": "^9.1.2",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.7.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}
